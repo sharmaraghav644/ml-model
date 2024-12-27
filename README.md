@@ -1,37 +1,61 @@
-# ml-model
-ML Model Project - Predict the chance of CVD (Cardio Vascular Disease)
+# ML Model Project - Predict the Chance of Cardiovascular Disease (CVD)
 
-Cardiovascular diseases are the leading cause of death globally. It is therefore necessary to identify the causes and develop a system to predict heart attacks in an effective manner. The data below has information about the factors that might have an impact on cardiovascular health. 
+## Description
 
-Task to be performed:
+Cardiovascular diseases (CVDs) are the leading cause of death worldwide, making it crucial to identify risk factors and develop effective prediction systems for heart attacks. In this project, we use historical health data to predict the likelihood of CVD based on various factors such as age, blood pressure, cholesterol, and more. The goal is to build a predictive model that can accurately determine the risk of heart attacks and help in timely interventions.
 
-Preliminary analysis:
+## Table of Contents
 
-Perform preliminary data inspection and report the findings on the structure of the data, missing values, duplicates, etc.
+1. [Description](#description)
+2. [Technology Used](#technology-used)
+3. [Dependencies](#dependencies)
+4. [Project Insights](#project-insights)
 
-Based on these findings, remove duplicates (if any) and treat missing values using an appropriate strategy
+## Technology Used
 
-Prepare a report about the data explaining the distribution of the disease and the related factors using the steps listed below:
+- **Pandas**: For data manipulation, cleaning, and exploration.
+- **Numpy**: For handling numerical operations.
+- **Matplotlib** and **Seaborn**: For data visualization and exploratory data analysis.
+- **Scikit-learn**: For building machine learning models (Logistic Regression, Random Forest).
+- **Statsmodels**: For advanced statistical modeling, including logistic regression with p-values and standard errors.
+- **Jupyter Notebooks**: For an interactive analysis environment.
 
-Get a preliminary statistical summary of the data and explore the measures of central tendencies and spread of the data
+## Dependencies
 
-Identify the data variables that are categorical and describe and explore these variables using the appropriate tools, such as count plot 
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
+- `statsmodels`
+- `jupyter`
 
-Study the occurrence of CVD across the Age category
+## Project Insights
 
-Study the composition of all patients with respect to the Sex category
+### Preliminary Data Inspection and Analysis:
 
-Study if one can detect heart attacks based on anomalies in the resting blood pressure (trestbps) of a patient
+- **Structure of the Data**: The dataset consists of various health metrics that might influence cardiovascular health, including demographic factors (e.g., age, sex), physiological measures (e.g., blood pressure, cholesterol), and lifestyle-related factors.
+- **Missing Values**: We handled missing values using appropriate strategies such as mean/median imputation for numerical variables and mode imputation for categorical variables.
+- **Duplicates**: Any duplicate records were removed to ensure the integrity of the analysis.
 
-Describe the relationship between cholesterol levels and a target variable
+### Statistical Summary:
 
-State what relationship exists between peak exercising and the occurrence of a heart attack
+- A preliminary statistical summary was generated to explore the measures of central tendency (mean, median) and spread (variance, standard deviation) for numerical variables.
+- **Categorical Variables**: Categorical variables like `sex`, `thalassemia`, and `target` (indicating the presence of heart disease) were explored using count plots to visualize the distribution.
 
-Check if thalassemia is a major cause of CVD
+### Exploratory Data Analysis (EDA):
 
-List how the other factors determine the occurrence of CVD
+- **Age vs CVD**: We analyzed the occurrence of CVD across different age groups and observed trends in the data.
+- **Sex Distribution**: We studied the composition of patients with CVD based on gender to identify any significant patterns.
+- **Resting Blood Pressure**: The relationship between resting blood pressure (`trestbps`) and the occurrence of CVD was examined to detect any anomalies that may indicate a risk of heart attack.
+- **Cholesterol Levels**: We analyzed how varying cholesterol levels correlate with the occurrence of CVD.
+- **Exercise and CVD**: The relationship between peak exercise (`thalach`) and heart disease occurrence was studied to see if exercise level plays a role in heart health.
+- **Thalassemia**: We investigated if thalassemia is a major cause of CVD and its impact on heart disease prediction.
+- **Pair Plot**: A pair plot was created to understand the relationships between all variables and visually detect patterns or correlations.
 
-Use a pair plot to understand the relationship between all the given variables
+### Model Building:
 
+- **Baseline Model**: We built a baseline predictive model using **Logistic Regression** and **Random Forest** to predict the likelihood of heart attacks.
+- **Correlation Analysis**: A correlation analysis was performed to identify highly correlated features and reduce multicollinearity.
+- **Feature Selection**: Using **Logistic Regression** with **p-values** and **standard errors** (via Statsmodels), we performed feature selection to retain only the most relevant features for model tr
 
-Build a baseline model to predict the risk of a heart attack using a logistic regression and random forest and explore the results while using correlation analysis and logistic regression (leveraging standard error and p-values from statsmodels) for feature selection
